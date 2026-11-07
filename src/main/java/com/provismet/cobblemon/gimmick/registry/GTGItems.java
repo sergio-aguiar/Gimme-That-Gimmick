@@ -289,7 +289,7 @@ public abstract class GTGItems {
     public static final DataDrivenFusionItem DATA_DRIVEN_FUSION = register("data_driven_fusion", DataDrivenFusionItem::new);
     public static final DataDrivenToggleItem DATA_DRIVEN_TOGGLE = register("data_driven_toggle", DataDrivenToggleItem::new);
 
-    private static MegaStoneItem registerMegaStone (String name, MegaEvolution megaEvolution) {
+    protected static MegaStoneItem registerMegaStone (String name, MegaEvolution megaEvolution) {
         return registerShowdownItem(
             name,
             (settings, vanillaBaseItem, modelData) -> new MegaStoneItem(
@@ -300,11 +300,11 @@ public abstract class GTGItems {
         );
     }
 
-    private static MegaStoneItem registerMegaStone (String name, String species, String megaAspect) {
+    protected static MegaStoneItem registerMegaStone (String name, String species, String megaAspect) {
         return registerMegaStone(name, MegaEvolution.create(species, "normal", megaAspect));
     }
 
-    private static MegaStoneItem registerMegaStone (String name, String species) {
+    protected static MegaStoneItem registerMegaStone (String name, String species) {
         return registerMegaStone(name, species, "mega");
     }
 
